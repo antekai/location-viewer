@@ -32,6 +32,7 @@ const MapMarkers = ({
   return locations.map((location) => (
     <Marker
       key={location.id}
+      alt={`marker-${location.id}`}
       position={[location.lat, location.lng]}
       icon={selectedIds.includes(location.id) ? selectedIcon : unselectedIcon}
       eventHandlers={{

@@ -23,7 +23,7 @@ const Map = ({ locations, selectedIds, setSelectedIds }: MapProps) => {
   };
 
   return (
-    <Box sx={{ marginBottom: "20px" }}>
+    <Box data-testid="map" sx={{ marginBottom: "20px" }}>
       <MapContainer
         center={MAP_CENTER}
         zoom={6}
