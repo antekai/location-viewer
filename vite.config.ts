@@ -9,8 +9,8 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
       manifest: {
-        name: "LiveEO Location Viewer",
-        short_name: "LiveEO App",
+        name: "Location Viewer",
+        short_name: "LA",
         description: "A PWA for viewing locations on a map and in a datagrid",
         theme_color: "#ffffff",
         icons: [
