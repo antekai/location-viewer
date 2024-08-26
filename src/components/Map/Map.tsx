@@ -1,7 +1,8 @@
 import { MapContainer, TileLayer } from "react-leaflet";
 import MapMarkers from "./MapMarkers";
 import { Box } from "@mui/material";
-import { Location, MAP_CENTER } from "../../data";
+import { MAP_CENTER } from "../../../map-config";
+import { Location } from "../../data";
 
 interface MapProps {
   locations: Location[];

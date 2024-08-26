@@ -3,8 +3,8 @@ import "leaflet/dist/leaflet.css";
 import { Typography } from "@mui/material";
 import Map from "../components/Map/Map";
 import LocationsTable from "../components/LocationsTable/LocationsTable";
-import { locations } from "../data";
 import { StyledLocationViewer } from "./styles";
+import { locations } from "../data";
 
 const LocationViewer = () => {
   const [selectedIds, setSelectedIds] = useState<number[]>([]);

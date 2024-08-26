@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { SELECTED_COLOR, UNSELECTED_COLOR } from "../map-config";
 
 test("homepage has title and map is visible", async ({ page }) => {
   // Navigate to the homepage
@@ -15,8 +16,6 @@ test("user (de)selects marker at map", async ({ page }) => {
   await page.goto("/");
 
   const MARKER_ID = 1;
-  const SELECTED_COLOR = "green";
-  const UNSELECTED_COLOR = "red";
 
   const mapMarker = page.getByAltText(`marker-${MARKER_ID}`);
   let markerSrc = await mapMarker.getAttribute("src");
@@ -44,12 +43,11 @@ test("user (de)selects marker at table", async ({ page }) => {
   await page.goto("/");
 
   const MARKER_ID = 2;
-  const SELECTED_COLOR = "green";
-  const UNSELECTED_COLOR = "red";
 
   const mapMarker = page.getByAltText(`marker-${MARKER_ID}`);
   let markerSrc = await mapMarker.getAttribute("src");
   const row = page.locator(`[data-id="${MARKER_ID}"]`);
+
   //default state
   await expect(markerSrc).toContain(UNSELECTED_COLOR);
 

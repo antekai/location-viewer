@@ -1,5 +1,6 @@
 import { Marker, Popup, useMap } from "react-leaflet";
 import { Icon } from "leaflet";
+import { SELECTED_COLOR, UNSELECTED_COLOR } from "../../../map-config";
 import { Location } from "../../data";
 
 const createIcon = (color: string) =>
@@ -13,8 +14,8 @@ const createIcon = (color: string) =>
     shadowSize: [41, 41],
   });
 
-const unselectedIcon = createIcon("red");
-const selectedIcon = createIcon("green");
+const unselectedIcon = createIcon(UNSELECTED_COLOR);
+const selectedIcon = createIcon(SELECTED_COLOR);
 
 interface MapMarkersProps {
   locations: Location[];

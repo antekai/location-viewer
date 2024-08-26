@@ -1,13 +1,9 @@
-import { LatLngTuple } from "leaflet";
-
 export interface Location {
   id: number;
   name: string;
   lat: number;
   lng: number;
 }
-
-export const MAP_CENTER: LatLngTuple = [51.1657, 10.4515];
 
 export const locations: Location[] = [
   { id: 1, name: "Berlin", lat: 52.52, lng: 13.405 },
