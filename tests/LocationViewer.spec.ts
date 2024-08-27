@@ -1,5 +1,8 @@
 import { test, expect } from "@playwright/test";
-import { SELECTED_COLOR, UNSELECTED_COLOR } from "../map-config";
+import {
+  SELECTED_MARKER_COLOR,
+  UNSELECTED_MARKER_COLOR,
+} from "../src/components/Map/config";
 
 test("homepage has title and map is visible", async ({ page }) => {
   // Navigate to the homepage
@@ -22,20 +25,20 @@ test("user (de)selects marker at map", async ({ page }) => {
   const row = page.locator(`[data-id="${MARKER_ID}"]`);
 
   //default state
-  await expect(markerSrc).toContain(UNSELECTED_COLOR);
+  await expect(markerSrc).toContain(UNSELECTED_MARKER_COLOR);
 
   // map-marker selection
   await mapMarker.click();
   markerSrc = await mapMarker.getAttribute("src");
   // selected state
-  await expect(markerSrc).toContain(SELECTED_COLOR);
+  await expect(markerSrc).toContain(SELECTED_MARKER_COLOR);
   await expect(row).toHaveAttribute("aria-selected", "true");
 
   // map-marker deselection
   await mapMarker.click();
   markerSrc = await mapMarker.getAttribute("src");
   // unselected state
-  await expect(markerSrc).toContain(UNSELECTED_COLOR);
+  await expect(markerSrc).toContain(UNSELECTED_MARKER_COLOR);
   await expect(row).toHaveAttribute("aria-selected", "false");
 });
 
@@ -49,19 +52,19 @@ test("user (de)selects marker at table", async ({ page }) => {
   const row = page.locator(`[data-id="${MARKER_ID}"]`);
 
   //default state
-  await expect(markerSrc).toContain(UNSELECTED_COLOR);
+  await expect(markerSrc).toContain(UNSELECTED_MARKER_COLOR);
 
   // table row selection
   await row.click();
   markerSrc = await mapMarker.getAttribute("src");
   // selected state
-  await expect(markerSrc).toContain(SELECTED_COLOR);
+  await expect(markerSrc).toContain(SELECTED_MARKER_COLOR);
   await expect(row).toHaveAttribute("aria-selected", "true");
 
   // table row deselection
   await row.click();
   markerSrc = await mapMarker.getAttribute("src");
   // unselected state
-  await expect(markerSrc).toContain(UNSELECTED_COLOR);
+  await expect(markerSrc).toContain(UNSELECTED_MARKER_COLOR);
   await expect(row).toHaveAttribute("aria-selected", "false");
 });

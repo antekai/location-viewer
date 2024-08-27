@@ -20,5 +20,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "map-config.ts", "tests/LocationViewer.spec.ts"]
+  "include": ["src", "tests/LocationViewer.spec.ts"]
 }
