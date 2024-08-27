@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { VitePWA } from "vite-plugin-pwa";
+import { VitePWA, ManifestOptions } from "vite-plugin-pwa";
+import manifestJSON from "./public/manifest.json";
 
 export default defineConfig({
   plugins: [
@@ -8,23 +9,9 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
-      manifest: {
-        name: "Location Viewer",
-        short_name: "LA",
-        description: "A PWA for viewing locations on a map and in a datagrid",
-        theme_color: "#ffffff",
-        icons: [
-          {
-            src: "logo192.png",
-            sizes: "192x192",
-            type: "image/png",
-          },
-          {
-            src: "logo512.png",
-            sizes: "512x512",
-            type: "image/png",
-          },
-        ],
+      manifest: manifestJSON as Partial<ManifestOptions>,
+      workbox: {
+        globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
       },
     }),
   ],
