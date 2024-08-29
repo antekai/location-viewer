@@ -40,6 +40,8 @@ Technologies:
 - Testing: eslint, [playwright](https://playwright.dev/)
 - CI/CD: GitHub Actions, Netlify
 
+Please check [Implementation docs](/docs/implementation.md) for more details
+
 ## Development
 
 > ```shell
